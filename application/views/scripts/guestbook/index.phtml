@@ -1,0 +1,9 @@
+<div id="post">
+    <h3>Guestbook Entries</h3>
+	<dl>
+        <? foreach($this->entries as $entry): ?>
+        <dt><? echo $this->escape($entry->email) ?></dt>
+        <dd><? echo $this->escape($entry->comment) ?> (<? echo $this->escape($entry->created) ?>)</dd>
+        <? endforeach ?>
+	</dl>
+</div>

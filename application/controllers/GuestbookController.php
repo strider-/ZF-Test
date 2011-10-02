@@ -2,16 +2,15 @@
 
 class GuestbookController extends Zend_Controller_Action
 {
+    protected $guestbook;
 
     public function init()
     {
-        /* Initialize action controller here */
+        $this->guestbook = new Application_Model_GuestbookMapper();
     }
 
     public function indexAction()
     {
-        $guestbook = new Application_Model_GuestbookMapper();
-        $this->view->entries = $guestbook->fetchAll();
+        $this->view->entries = $this->guestbook->fetchAll();
     }
 }
-
